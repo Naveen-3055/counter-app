@@ -6,24 +6,30 @@ import ReactDOM from 'react-dom/client'
 import './App.css'
 
 function App() {
+    //useState for storing intialized content.
     const [count,setCount] = useState(0);
     const [numbers,setNumbers] = useState([]);
     const [isAscending, setAscending] = useState(true);
 
-    const increment = () => setCount(count+1);
-    const decrement = () => setCount(previous => (previous>0)?previous-1:0);
-    
+    // increment function
+    const increment = () => setCount(count+1);// increment values.
+    //decrement function 
+    const decrement = () => setCount(previous => (previous>0)?previous-1:0);// decrement values.
+
+    // addList function
     const addList = ()=>{
-      if(count>0 && !numbers.includes(count)){
-        setNumbers([...numbers,count]);
-        setCount(0);
+      if(count>0 && !numbers.includes(count)){ // this line prevents the duplicate values.
+        setNumbers([...numbers,count]);// stores the count into numbers array.
+        setCount(0);// count set to 0 value.
       }
     };
 
+    // this toggles the value of Ascending to true or false
     const toggle = () =>{
       setAscending(!isAscending);
     }
 
+    // sort the values based on the ascending and descending.
     const sorted = [...numbers].sort((a,b) => 
       isAscending ?a-b : b-a
    );
