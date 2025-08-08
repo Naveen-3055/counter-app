@@ -6,7 +6,7 @@ import ReactDOM from 'react-dom/client'
 import './App.css'
 
 function App() {
-    //useState for storing intialized content.
+    //useState for storing intialized content and updated content.
     const [count,setCount] = useState(0);
     const [numbers,setNumbers] = useState([]);
     const [isAscending, setAscending] = useState(true);
